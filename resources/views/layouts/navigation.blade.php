@@ -11,12 +11,18 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex test">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('employee')">
-                       Employee
+                    <x-nav-link :href="route('employee.index')" :active="request()->routeIs('employee')">
+                       Employees
+                    </x-nav-link>
+                    <x-nav-link :href="route('department.index')" :active="request()->routeIs('department')">
+                       Departments
+                    </x-nav-link>
+                    <x-nav-link :href="route('project.index')" :active="request()->routeIs('project')">
+                       Projects
                     </x-nav-link>
                 </div>
             </div>

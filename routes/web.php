@@ -17,4 +17,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::prefix('employee')->group(function() {
+    Route::get('/', fn() => dd('employee'))->name('employee.index');
+});
+
+Route::prefix('department')->group(function() {
+    Route::get('/', fn() => dd('department'))->name('department.index');
+});
+
+Route::prefix('project')->group(function() {
+    Route::get('/', fn() => dd('project'))->name('project.index');
+});
+
 require __DIR__.'/auth.php';
