@@ -1,7 +1,40 @@
 <?php
 
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+=======
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::prefix('employee')->group(function() {
+    Route::get('/', fn() => dd('employee'))->name('employee.index');
+});
+
+Route::prefix('department')->group(function() {
+    Route::get('/', fn() => dd('department'))->name('department.index');
+});
+
+Route::prefix('project')->group(function() {
+    Route::get('/', fn() => dd('project'))->name('project.index');
+});
+
+require __DIR__.'/auth.php';
+>>>>>>> 8cbb1eef02ba9c5e5e90cc8e0c313ea32b5ae0da

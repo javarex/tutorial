@@ -1,6 +1,10 @@
 /.phpunit.cache
 /node_modules
+<<<<<<< HEAD
 /public/build
+=======
+# /public/build
+>>>>>>> 8cbb1eef02ba9c5e5e90cc8e0c313ea32b5ae0da
 /public/hot
 /public/storage
 /storage/*.key
